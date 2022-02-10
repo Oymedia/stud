@@ -1,0 +1,19 @@
+
+
+
+<h1><%= @student_detail.student_name %></h1>
+<h1><%= @student_detail.parent_name %></h1>
+<h1><%= @student_detail.student_class %></h1>
+<h1><%= @student_detail.syllabus %></h1>
+<h1><%= @student_detail.subject %></h1>
+<h1><%= @student_detail.phone_no %></h1>
+<h1><%= @student_detail.email_id %></h1>
+<h1><%= @student_detail.course_duration %></h1>
+<h1><%= @student_detail.reference %></h1>
+
+<ul>
+<li>
+<%= link_to 'Edit', edit_student_detail_path(@student_detail) %> |
+<%= link_to 'Destroy', student_details_path(@student_detail), method: :delete, data: { confirm: "Are you sure?" } %> |
+<%= link_to 'Back', student_details_path %> </li>
+</ul>

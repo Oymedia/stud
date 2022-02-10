@@ -1,0 +1,54 @@
+
+
+<%= form_with model: student_detail do |form| %>
+  <div>
+    <%= form.label :student_name %>
+    <%= form.text_field :student_name %>
+  </div>
+  
+
+  <div>
+    <%= form.label :parent_name %>
+    <%= form.text_field :parent_name %>
+  </div>
+
+  <div>
+    <%= form.label :student_class %>
+    <%= form.text_field :student_class %>
+  </div>
+
+  <div>
+    <%= form.label :syllabus %>
+    <%= form.text_field :syllabus %>
+  </div>
+
+  <div>
+    <%= form.label :subject %>
+    <%= form.text_field :subject %>
+  </div>
+
+  <div>
+    <%= form.label :phone_no %>
+    <%= form.text_field :phone_no %>
+  </div>
+
+  <div>
+    <%= form.label :email_id %>
+    <%= form.text_field :email_id %>
+  </div>
+
+  <div>
+    <%= form.label :course_duration %>
+    <%= form.number_field :course_duration %>
+  </div>
+
+  <div>
+    <%= form.label :reference %>
+    <%= form.text_field :reference %>
+  </div>
+
+   <div>
+    <%= form.submit %>
+   </div>
+   
+<% end %>
