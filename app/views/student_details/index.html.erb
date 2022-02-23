@@ -7,6 +7,7 @@
   <% @student_details.each do |student_detail| %>
     <li>  
     <a href="<%= student_detail_path(student_detail) %>">
+    
 
       <%= student_detail.student_name %>
       <%= student_detail.parent_name %>
@@ -19,8 +20,12 @@
       <%= student_detail.reference %>
       <%= link_to 'Show', student_detail %>
       <%= link_to 'Edit', edit_student_detail_path(student_detail) %>
-      <%= link_to 'Delete', student_detail_path(student_detail), method: :delete, data: { confirm: "Are you sure?" } %>
-    </a>
+      <%#= link_to 'Delete', student_detail_path(student_detail), method: :delete, data: { confirm: "Are you sure?" } %>
+      <%= link_to "Destroy", student_detail_path(student_detail), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %></li>    
+      </a>
     </li>
   <% end %>
   

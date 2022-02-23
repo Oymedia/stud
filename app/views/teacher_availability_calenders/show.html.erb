@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @teacher_availability_calender %>
+
+<div>
+  <%= link_to "Edit this teacher availability calender", edit_teacher_availability_calender_path(@teacher_availability_calender) %> |
+  <%= link_to "Back to teacher availability calenders", teacher_availability_calenders_path %>
+
+  <%= button_to "Destroy this teacher availability calender", @teacher_availability_calender, method: :delete %>
+</div>

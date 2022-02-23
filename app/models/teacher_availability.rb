@@ -1,0 +1,2 @@
+class TeacherAvailability < ApplicationRecord
+end

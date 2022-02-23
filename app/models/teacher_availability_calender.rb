@@ -1,0 +1,2 @@
+class TeacherAvailabilityCalender < ApplicationRecord
+end

@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
+  get 'teacher_registration_forms/index'
+  resources :teacher_availabilities
+  resources :teacher_availability_calenders
+ 
   resources :student_details
+  resources :teacher_registration_forms
   #, only: [:show, :index, :new, :create, :edit, :update, :destroy]
   root 'student_details#index'
+  resources :arranging_teachers
  
 # get 'student_details/index'
  # get 'index', to: 'student_details#index'

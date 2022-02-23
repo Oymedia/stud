@@ -3,7 +3,7 @@ class StudentDetailsController < ApplicationController
  
   def index
     @student_details = StudentDetail.all
-    end
+  end
     
     def show
       @student_detail = StudentDetail.find(params[:id])  
@@ -40,9 +40,10 @@ class StudentDetailsController < ApplicationController
         end
       end
       def destroy
+       
         @student_detail = StudentDetail.find(params[:id])
         @student_detail.destroy
-
+        puts "This is really strange"
           redirect_to student_details_path
       end
 end
