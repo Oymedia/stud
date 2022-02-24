@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   #, only: [:show, :index, :new, :create, :edit, :update, :destroy]
   root 'student_details#index'
   resources :arranging_teachers
+  get 'signup', to: 'users#new'
+  resources :users, except: [:new]
  
 # get 'student_details/index'
  # get 'index', to: 'student_details#index'
