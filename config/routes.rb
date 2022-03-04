@@ -4,12 +4,16 @@ Rails.application.routes.draw do
   resources :teacher_availability_calenders
  
   resources :student_details
-  resources :teacher_registration_forms
+  get 'teacher_registration_forms', to: 'teacher_registration_forms#new'
+  #resources :teacher_registration_forms
   #, only: [:show, :index, :new, :create, :edit, :update, :destroy]
-  root 'student_details#index'
+  root 'mainpage#home'
   resources :arranging_teachers
   get 'signup', to: 'users#new'
   resources :users, except: [:new]
+  get 'login', to: 'sessions#new'
+  post 'login', to: 'sessions#create'
+  delete 'logout', to: 'sessions#destroy'
  
 # get 'student_details/index'
  # get 'index', to: 'student_details#index'
@@ -27,5 +31,5 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
-  # root "articles#index"
+ 
 end

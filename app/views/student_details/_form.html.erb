@@ -1,6 +1,6 @@
 
 
-<%= form_with model: student_detail do |form| %>
+<%= form_with model: @student_detail do |form| %>
   <% if student_detail.errors.any? %>
   <div style="color: red">
     <h2><%= pluralize(student_detail.errors.count, "error") %> prohibited this student_detail from being saved:</h2>
@@ -17,7 +17,11 @@
   <div>
     <%= form.label :student_name, style: "display: block" %>
     <%= form.text_field :student_name %>
+    <% @student_detail.errors.full_messages_for(:student_name).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
   </div>
+
   
 
   <div>

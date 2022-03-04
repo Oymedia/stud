@@ -2,32 +2,58 @@
 <h1>Details of all the students</h1>
 
 
+<table>
+  <thead>
+    <tr>  
+      <th>Student Name</th>
+      <th>Parent Name</th>
+      <th>Student class</th>
+      <th>Syllabus</th>
+      <th>Subject</th>
+      <th>Phone No</th>
+      <th>Email</th>
+      <th>Course Duration</th>
+      <th>Reference</th>
+      <th>Actions</th>
+    <tr>
+  </thead>
 
-<ul>
+  <tbody>
   <% @student_details.each do |student_detail| %>
-    <li>  
     <a href="<%= student_detail_path(student_detail) %>">
-    
 
-      <%= student_detail.student_name %>
-      <%= student_detail.parent_name %>
-      <%= student_detail.student_class %>
-      <%= student_detail.syllabus %>
-      <%= student_detail.subject %>
-      <%= student_detail.phone_no %>
-      <%= student_detail.email_id %>
-      <%= student_detail.course_duration %>
-      <%= student_detail.reference %>
-      <%= link_to 'Show', student_detail %>
-      <%= link_to 'Edit', edit_student_detail_path(student_detail) %>
-      <%#= link_to 'Delete', student_detail_path(student_detail), method: :delete, data: { confirm: "Are you sure?" } %>
-      <%= link_to "Destroy", student_detail_path(student_detail), data: {
-                    turbo_method: :delete,
-                    turbo_confirm: "Are you sure?"
-                  } %></li>    
-      </a>
-    </li>
-  <% end %>
-  
+      <tr>
+       
+        <td><%= student_detail.student_name %></td>
+        <td><%= student_detail.parent_name %></td>
+        <td><%= student_detail.student_class %></td>
+        <td><%= student_detail.syllabus %></td>
+        <td><%= student_detail.subject %></td>
+        <td><%= student_detail.phone_no %></td>
+        <td><%= student_detail.email_id %></td>
+        <td><%= student_detail.course_duration %></td>
+        <td><%= student_detail.reference %></td>
+        
+        <td><%= link_to 'Show', student_detail, class: "btn btn-outline-danger" %></td>
+       
+        
+          <td><%= link_to 'Edit', edit_student_detail_path(student_detail), class: "btn btn-outline-danger" %></td>
+          <td><%= link_to "Destroy", student_detail_path(student_detail), data: {
+            turbo_method: :delete,
+            turbo_confirm: "Are you sure?"
+          } %></td>    </tr>
+
+        </a>
+      </tr>
+    <% end %>
+    
+  </tbody>
+</table>
+<ul>
+<li>
+<%= link_to 'Login', login_path %></li>
+        
+
 </ul>
+
 <%= link_to "Add new Student", new_student_detail_path %>

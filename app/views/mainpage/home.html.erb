@@ -1,0 +1,8 @@
+<h1>home page</h1>
+
+<%= link_to 'Student Details', student_details_path %>
+<%= link_to 'Arranging Teachers', arranging_teachers_path %>
+<li><%= link_to "logout", logout_path, data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %></li>

@@ -1,19 +1,24 @@
 <p style="color: green"><%= notice %></p>
 
 <h2>
-<style="display:inline">Student Name: <%= @student_detail.student_name %></h2>
-<h2><style="display:inline">Parent Name:<%= @student_detail.parent_name %></h2>
-<h2><style="display:inline">Student class: <%= @student_detail.student_class %></h2>
-<h2><style="display:inline">Syllabus: <%= @student_detail.syllabus %></h2>
-<h2><style="display:inline">Subject: <%= @student_detail.subject %></h2>
-<h2><style="display:inline">Phone No: <%= @student_detail.phone_no %></h2>
-<h2><style="display:inline">Email: <%= @student_detail.email_id %></h2>
-<h2><style="display:inline">Course Duration: <%= @student_detail.course_duration %></h2>
-<h2><style="display:inline">Reference: <%= @student_detail.reference %></h2>
 
-<ul>
-<li>
-<%= link_to 'Edit', edit_student_detail_path(@student_detail) %> |
-<%= link_to 'Destroy', student_details_path(@student_detail), method: :delete, data: { confirm: "Are you sure?" } %> |
+<p><strong>Student Name: </strong><%= @student_detail.student_name %></p>
+<p><strong>Parent Name: </strong><%= @student_detail.parent_name %></p>
+<p><strong>Student class: </strong><%= @student_detail.student_class %></p>
+<p><strong>Syllabus: </strong><%= @student_detail.syllabus %></p>
+<p><strong>Subject: </strong><%= @student_detail.subject %></p>
+<p><strong>Phone No: </strong><%= @student_detail.phone_no %></p>
+<p><strong>Email: </strong><%= @student_detail.email_id %></p>
+<p><strong>Course Duration: </strong><%= @student_detail.course_duration %></p>
+<p><strong>Reference: </strong><%= @student_detail.reference %></p>
+</h2>
+
+
+<li><%= link_to 'Edit', edit_student_detail_path(@student_detail) %></li>
+   <li><%= link_to "Destroy", student_detail_path(@student_detail), data: {
+    turbo_method: :delete,
+    turbo_confirm: "Are you sure?"
+  } %></li>
+
 <%= link_to 'Back', student_details_path %> </li>
 </ul>
